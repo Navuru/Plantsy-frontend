@@ -11,6 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+#toy-collection {
+  margin: 2rem;
+}
 /* .card {
   text-align: center;
   border: grey solid 1px;

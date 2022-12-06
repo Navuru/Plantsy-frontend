@@ -6,6 +6,7 @@ function PlantContainer({plants}) {
         <PlantCard
         key={plant.id}
         plant={plant}
+        description={ plant.description }
         />
     )); 
 
