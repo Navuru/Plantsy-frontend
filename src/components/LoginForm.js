@@ -2,41 +2,48 @@ import React, {useState} from "react";
 import SignUpForm from "./SignUpForm";
 
 
-function LoginForm() {
-    const [formData,setFormData] = useState ({
-        username: "",
-        password: "",
-        password_confirmation: "",
-    })
+function LoginForm({onLogin}) {
+    
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [errors, setErrors] = useState([]);
 
     function handleSubmit(e) {
         e.preventDefault();
-        
+        fetch("/login",{
+            method: "POST",
+            headers: {
+            "Content-Type": "application/json",
+            },
+            body: JSON.stringify({username,password}),
+        }).then((r) => {
+            if (r.ok) {
+                r.json().then((user) => onLogin(user));
+            } else {
+                r.json().then((err) => setErrors(err.errors));
+            }
+        });
+
     }
 
     return (
         <div className= "container">
-        <form>
+        <form onSubmit={handleSubmit}>
             <h3>Login</h3>
             <input
             type="text"
             name="name"
-            value={formData.username}
+            value={username}
             placeholder="Enter username..."
+            onChange={(e) => setUsername(e.target.value)}
             />
             <br/> <br/>
             <input
             type="password"
             name="password"
-            value={formData.password}
+            value={password}
             placeholder="Enter password..."
-            />
-             <br/> <br/>
-             <input
-            type="password"
-            name="password"
-            value={formData.password_confirmation}
-            placeholder="Re-enter password..."
+            onChange={(e) => setPassword(e.target.value)}
             />
             <br/><br/>
              <input
@@ -44,7 +51,13 @@ function LoginForm() {
             name="submit"
             value="Login"
             className="submit"
-                />
+            />
+            {/* <div>
+            {errors.map((err) => (
+          <Error key={err}>{err}</Error>
+        ))}
+            </div> */}
+
         </form>
     </div>
     )
