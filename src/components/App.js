@@ -1,6 +1,7 @@
 // import './App.css';
 import PlantCard from "./PlantCard";
 import PlantForm from "./PlantForm";
+import SignUpForm from "./SignUpForm";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
 
    <br></br>
    <PlantForm/>
+   <SignUpForm/>
    </>
   );
 }
