@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Login from "./login/Login";
+import LoginForm from './pages/LoginForm';
+import Home from './home/Home';
 import BaseRouter from "../routes";
 import {BrowserRouter as Router} from "react-router-dom";
-import {BrowserRouter as Route} from "react-router-dom";
-import PlantContainer from './pages/PlantContainer';
+import { Route} from "react-router-dom";
+import { Routes } from "react-router-dom";
+// import PlantContainer from './pages/PlantContainer';
 import NavBar from './NavBar';
 
 
@@ -21,20 +24,15 @@ function App() {
       }
     });
   };
-  // if (!user) return <Login onLogin={setUser} />;
+  if (!user) return <Login onLogin={setUser} />;
 
   return (
     <>
     <Router>
-    <NavBar/>
+    <NavBar user={user} setUser={setUser}/>
     <BaseRouter user={user} setUser={setUser} autologin={autologin} />
     </Router>
-    <div>
-      {/* <Home/>
-    <Route path="/home "/> */}
     
-    </div>
-
     </>
     
   );

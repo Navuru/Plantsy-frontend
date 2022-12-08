@@ -13,9 +13,9 @@ function NavBar ({user, setUser}) {
 
       return (
         <div>
-        <button as={Link} to="/new">
+        {/* <button as={Link} to="/home">
           New Plant
-        </button>
+        </button> */}
         <button onClick={handleLogoutClick}>
           Logout
         </button>
