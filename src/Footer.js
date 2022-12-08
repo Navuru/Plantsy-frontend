@@ -4,8 +4,8 @@ function Footer () {
 
     return (
         <div className='footer'>
-            <h6>Made with love by Lisa Navuru.</h6>
-            <h6>2022 All Rights Reserved</h6>
+            <h5>Made with love by Lisa Navuru.</h5>
+            <h5>2022 All Rights Reserved</h5>
         </div>
     )
 }

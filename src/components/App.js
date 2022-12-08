@@ -6,6 +6,7 @@ import BaseRouter from "../routes";
 import {BrowserRouter as Router} from "react-router-dom";
 import { Route} from "react-router-dom";
 import { Routes } from "react-router-dom";
+import Footer from '../Footer';
 // import PlantContainer from './pages/PlantContainer';
 import NavBar from './NavBar';
 
@@ -32,6 +33,7 @@ function App() {
     <NavBar user={user} setUser={setUser}/>
     <BaseRouter user={user} setUser={setUser} autologin={autologin} />
     </Router>
+    <Footer/>
     
     </>
     

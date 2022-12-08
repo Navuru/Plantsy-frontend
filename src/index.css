@@ -42,6 +42,13 @@ button{
   background-size:cover;
   /* object-fit: fill; */
 }
+.footer{
+  display: flex;
+  padding: 20px;
+  align-self: center;
+  justify-content: space-between;
+  font-weight: 400;
+}
 
 
 
