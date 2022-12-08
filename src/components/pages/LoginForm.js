@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 // import SignUpForm from "./SignUpForm";
+import "../pages/login.css"
 
 
 function LoginForm({onLogin}) {
@@ -30,7 +31,7 @@ function LoginForm({onLogin}) {
     return (
         <div className= "container">
         <form onSubmit={handleSubmit}>
-            <h3>Login</h3>
+            <h2>Login</h2>
             <input
             type="text"
             name="name"
@@ -48,6 +49,7 @@ function LoginForm({onLogin}) {
             />
             <br/><br/>
              <input
+             id="input"
             type="submit"
             name="submit"
             value="Login"

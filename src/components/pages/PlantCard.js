@@ -1,5 +1,6 @@
 import React from 'react';
 import PlantForm from "./PlantForm";
+import "../home/Home.css"
 
 function PlantCard ({plant, onDeletePlant, onUpdatePlant}) {
     const { id, name, image_url, description, likes} = plant;
@@ -31,7 +32,7 @@ function PlantCard ({plant, onDeletePlant, onUpdatePlant}) {
         .then((updatedPlant) => onUpdatePlant(updatedPlant));
     }
     return (
-        <div class="card" style={{width: "15rem"}}>
+        <div id = "card"className="card" style={{width: "15rem"}}>
         <img src={image_url} class="card-img-top" alt="..." style={{width: "15rem"}}/>
         <div class="card-body">
             <h3 class="card-title">{name}</h3>

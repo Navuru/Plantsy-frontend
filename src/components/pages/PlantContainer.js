@@ -1,5 +1,6 @@
 import React from 'react';
 import PlantCard from './PlantCard';
+import "../home/Home.css"
 
 function PlantContainer({plants,onDeletePlant,onUpdatePlant }) {
     const plantCards = plants?.map((plant) => (
@@ -13,7 +14,7 @@ function PlantContainer({plants,onDeletePlant,onUpdatePlant }) {
         />
     )); 
 
-    return <div id = "plant-collection">{plantCards}</div>;
+    return <div id = "grid-container">{plantCards}</div>;
 }
 
 export default PlantContainer;

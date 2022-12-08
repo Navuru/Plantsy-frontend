@@ -1,12 +1,12 @@
-import PlantCard from "./PlantCard";
-import PlantForm from "./PlantForm";
-import SignUpForm from "./SignUpForm";
-import LoginForm from "./LoginForm";
-// import Header from "./Header";
-import PlantContainer from "./PlantContainer";
+// import PlantCard from "./PlantCard";
+import PlantForm from "../pages/PlantForm";
+import SignUpForm from "../pages/SignUpForm";
+import LoginForm from "../pages/LoginForm"
+import PlantContainer from "../pages/PlantContainer";
+import "../home/Home.css"
 import { useEffect, useState } from "react";
 
-function Header (){
+function Home (){
 
     const [plants,setPlants] = useState ([]);
   const [showForm, setShowForm] = useState(false);
@@ -49,12 +49,13 @@ function Header (){
   </div>
   <LoginForm/>
   <SignUpForm/>
-
+    <div id = "grid-container">
   <PlantContainer
     plants={plants}
     onDeletePlant={handleDeletePlant}
     onUpdatePlant={handleUpdatePlant}
   />
+  </div>
   {/* <PlantCard/> */}
   
   </>
@@ -63,4 +64,4 @@ function Header (){
   );
 }
 
-export default Header;
+export default Home;

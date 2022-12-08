@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import Home from './home/Home';
 import BaseRouter from "../routes";
-import {BrowserRouter as BrowserRouter} from "react-router-dom";
+import {BrowserRouter as Router} from "react-router-dom";
+import {BrowserRouter as Route} from "react-router-dom";
+import PlantContainer from './pages/PlantContainer';
 
 
 function App() {
@@ -30,9 +33,16 @@ function App() {
   
   return (
     <>
-    <Router>
+    {/* <Router>
+   
     <BaseRouter user={user} setUser={setUser} autologin={autologin} />
-    </Router>
+    </Router> */}
+    <div>
+      <Home/>
+    <Route path="/home "/>
+    
+    </div>
+
     </>
     
   );

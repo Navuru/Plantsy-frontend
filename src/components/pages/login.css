@@ -1,0 +1,31 @@
+input[type=text] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: #363F3D;
+    color:white;
+    font-family: 'Poppins', sans-serif;
+}
+#input{
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: #363F3D;
+    font-family: 'Poppins', sans-serif;
+}
+input[type=password] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: #363F3D;
+    color:white;
+    font-family: 'Poppins', sans-serif;
+}
+#card{
+    border-radius: 5px;
+}

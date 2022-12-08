@@ -1,5 +1,6 @@
 // import { Button } from "bootstrap";
 import React, { useState } from "react";
+import "../pages/login.css"
 
 function SignUpForm ({onLogin}) {
 
@@ -40,7 +41,7 @@ function SignUpForm ({onLogin}) {
     return ( 
         <div className= "container">
         <form onSubmit={handleSubmit}>
-            <h3>SignUp</h3>
+            <h2>SignUp</h2>
             <input
             type="text"
             name="name"
@@ -49,7 +50,8 @@ function SignUpForm ({onLogin}) {
             onChange={(e) => setUsername(e.target.value)}
             />
             <br/> <br/>
-            <input
+            <input 
+            id = "pasword"
             type="password"
             name="password"
             value={password}
@@ -58,6 +60,7 @@ function SignUpForm ({onLogin}) {
             />
              <br/> <br/>
              <input
+            id = "pasword"
             type="password"
             name="password"
             value={passwordConfirmation}
@@ -66,6 +69,7 @@ function SignUpForm ({onLogin}) {
             />
             <br/><br/>
              <input
+             id ="input"
             type="submit"
             name="submit"
             value="Create Account"

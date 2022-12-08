@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import "../pages/login.css"
 
 function PlantForm ({onAddPlant}) {
 
@@ -68,6 +69,7 @@ function PlantForm ({onAddPlant}) {
                 />
                 <br/><br/>
                  <input
+                 id = "input"
                 type="submit"
                 name="submit"
                 value="Create New Plant"

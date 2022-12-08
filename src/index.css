@@ -6,21 +6,24 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+  margin: auto;
+  width: 70%;
+  font-family: 'Poppins', sans-serif;
+  background-color: #d5cbbf;
+  margin-top: 25px;
 }
-#toy-collection {
-  margin: 2rem;
-}
-/* .card {
+button{
+  /* background-color:#3C433B; */
+  background-color: #697B6D;
+  border-radius: 12px;
+  font-size: 16px;
+  padding: 10px 30px;
   text-align: center;
-  border: grey solid 1px;
-  padding: 1rem;
-  width: 15rem;
-  height: 25rem;
-  display: inline-grid;
-  margin: 1rem 2rem;
-  box-shadow: 3px 4px #e04b52;
-} */
+  /* display: inline-block; */
+}
+
+
+
+
+
