@@ -47,8 +47,8 @@ function Home (){
   <div>
   <button onClick={handleClick}>Add a Plant</button>
   </div>
-  <LoginForm/>
-  <SignUpForm/>
+  {/* <LoginForm/> */}
+  {/* <SignUpForm/> */}
     <div id = "grid-container">
   <PlantContainer
     plants={plants}
@@ -56,7 +56,6 @@ function Home (){
     onUpdatePlant={handleUpdatePlant}
   />
   </div>
-  {/* <PlantCard/> */}
   
   </>
    

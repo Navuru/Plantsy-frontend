@@ -51,7 +51,6 @@ function SignUpForm ({onLogin}) {
             />
             <br/> <br/>
             <input 
-            id = "pasword"
             type="password"
             name="password"
             value={password}
