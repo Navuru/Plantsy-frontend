@@ -1,15 +1,44 @@
 import React from 'react';
+import PlantForm from "./PlantForm";
 
-function PlantCard () {
+function PlantCard ({plant, onDeletePlant, onUpdatePlant}) {
+    const { id, name, image_url, description, likes} = plant;
+    
 
+    function handleDeleteClick() {
+        fetch (`/plants/${id}`, {
+            method: 'DELETE',
+        }).then((r) => {
+            if (r.ok) {
+                onDeletePlant(plant);
+            }
+        });
+    }
+
+    function handleLikeClick() {
+        const updateObject = {
+            likes: plant.likes + 1,
+        };
+
+        fetch (`/plants/${id}`, {
+            method: 'PATCH',
+            headers: { 
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(updateObject),
+        })
+        .then((r) => r.json())
+        .then((updatedPlant) => onUpdatePlant(updatedPlant));
+    }
     return (
         <div class="card" style={{width: "15rem"}}>
-        <img src="https://cdn.pixabay.com/photo/2021/03/03/14/55/rhino-6065480__480.jpg" class="card-img-top" alt="..." style={{width: "15rem"}}/>
+        <img src={image_url} class="card-img-top" alt="..." style={{width: "15rem"}}/>
         <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Description</p>
-            <p>Likes</p>
-            <button type="button" class="btn btn-success">Like</button>
+            <h3 class="card-title">{name}</h3>
+            <p class="card-text">{description}</p>
+            <p>{likes} Likes</p>
+            <button type="button" class="btn btn-success" onClick={handleLikeClick}>Like</button>
+            <button className="del-btn" onClick={handleDeleteClick}>Delete</button>
         </div>
         </div>
     );

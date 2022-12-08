@@ -1,10 +1,10 @@
 import React, {useState} from "react";
 
-function PlantForm (onAddPlant) {
+function PlantForm ({onAddPlant}) {
 
     const [formData,setFormData] = useState({
         name: "",
-        image: "",
+        image_url: "",
         description: "",
     });
 
@@ -32,7 +32,7 @@ function PlantForm (onAddPlant) {
         .then((newPlant) => {
             setFormData({
                 name: "",
-                image: "",
+                image_url: "",
                 description: "",
             });
             onAddPlant(newPlant);
@@ -53,8 +53,8 @@ function PlantForm (onAddPlant) {
                 <br/> <br/>
                 <input
                 type="text"
-                name="image"
-                value={formData.image}
+                name="image_url"
+                value={formData.image_url}
                 placeholder="Enter plant's image url..."
                 onChange={handleChange}
                 />
@@ -72,7 +72,8 @@ function PlantForm (onAddPlant) {
                 name="submit"
                 value="Create New Plant"
                 className="submit"
-                    />
+                />
+                    <br/><br/>
             </form>
         </div>
     )
