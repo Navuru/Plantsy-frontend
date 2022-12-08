@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Home from './home/Home';
+import Login from "./login/Login";
 import BaseRouter from "../routes";
 import {BrowserRouter as Router} from "react-router-dom";
 import {BrowserRouter as Route} from "react-router-dom";
@@ -9,16 +9,6 @@ import PlantContainer from './pages/PlantContainer';
 function App() {
   const [user, setUser] = useState(null);
 
-  // useEffect(() => {
-  //   //auto login
-  //   fetch("/me").then((r) => {
-  //     if (r.ok) {
-  //       r.json().then((user) => setUser(user));
-  //     }
-  //   });
-  // }, []);
-
-  // if (!user) return <Login onLogin={setUser}/>
   useEffect(() => {
     // auto-login
     autologin();
@@ -30,16 +20,17 @@ function App() {
       }
     });
   };
-  
+  // if (!user) return <Login onLogin={setUser} />;
+
   return (
     <>
-    {/* <Router>
+    <Router>
    
     <BaseRouter user={user} setUser={setUser} autologin={autologin} />
-    </Router> */}
+    </Router>
     <div>
-      <Home/>
-    <Route path="/home "/>
+      {/* <Home/>
+    <Route path="/home "/> */}
     
     </div>
 

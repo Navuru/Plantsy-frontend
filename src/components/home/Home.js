@@ -4,6 +4,7 @@ import SignUpForm from "../pages/SignUpForm";
 import LoginForm from "../pages/LoginForm"
 import PlantContainer from "../pages/PlantContainer";
 import "../home/Home.css"
+import Header from "../pages/Header"
 import { useEffect, useState } from "react";
 
 function Home (){
@@ -43,10 +44,12 @@ function Home (){
 
   return (
    <>
+   <Header/>
   {showForm ? <PlantForm onAddPlant={handleAddPlant}/> : null }
   <div>
   <button onClick={handleClick}>Add a Plant</button>
   </div>
+  
   {/* <LoginForm/> */}
   {/* <SignUpForm/> */}
     <div id = "grid-container">

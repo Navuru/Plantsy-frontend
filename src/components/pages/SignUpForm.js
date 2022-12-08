@@ -4,11 +4,6 @@ import "../pages/login.css"
 
 function SignUpForm ({onLogin}) {
 
-    // const [formData,setFormData] = useState({
-    //     username: "",
-    //     password: "",
-    //     password_confirmation: "",
-    // });
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
