@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import Login from "./components/login/Login.js";
 // import Signup from "./components/SignUp.js";
 import Home from "./components/home/Home";
+import NavBar from "./components/NavBar.js";
 
 
 const BaseRouter = ({setUser,user, autologin}) => (

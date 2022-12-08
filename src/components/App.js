@@ -4,6 +4,7 @@ import BaseRouter from "../routes";
 import {BrowserRouter as Router} from "react-router-dom";
 import {BrowserRouter as Route} from "react-router-dom";
 import PlantContainer from './pages/PlantContainer';
+import NavBar from './NavBar';
 
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
   return (
     <>
     <Router>
-   
+    <NavBar/>
     <BaseRouter user={user} setUser={setUser} autologin={autologin} />
     </Router>
     <div>
