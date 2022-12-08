@@ -46,7 +46,7 @@ button{
   display: flex;
   padding: 20px;
   align-self: center;
-  justify-content: space-between;
+  justify-content: space-around;
   font-weight: 400;
 }
 
