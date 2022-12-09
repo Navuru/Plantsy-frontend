@@ -1,15 +1,16 @@
 import React, {useState} from "react";
 import "../pages/login.css"
 import Error from "./Error";
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
-function LoginForm({onLogin}) {
+function LoginForm() {
     
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
-    // const navigate = useNavigate();
+    
+    const navigate = useNavigate();
     // const to_home = () => {
     //     navigate("/home");
     //   };
@@ -17,15 +18,18 @@ function LoginForm({onLogin}) {
     function handleSubmit(e) {
         e.preventDefault();
         setErrors([]);
-        fetch("/login",{
+        fetch("https://plantsy-production-7d90.up.railway.app/plants/login",{
             method: "POST",
             headers: {
             "Content-Type": "application/json",
             },
             body: JSON.stringify({username,password}),
         }).then((r) => {
-            if (r.ok) {
-                r.json().then((user) => onLogin(user));
+            if (r.status == 201) {
+                // console.log("We are logged in")
+                r.json().then(user => {
+                    navigate('/home')
+                });
                 // to_home()
             } else {
                 r.json().then((err) => setErrors(err.errors));

@@ -3,6 +3,7 @@ import BaseRouter from "../routes";
 import {BrowserRouter as Router} from "react-router-dom";
 // import { useNavigate } from 'react-router-dom';
 import Footer from '../Footer';
+import NavBar from "./NavBar"
 
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
     autologin();
   }, []);
   const autologin = () => {
-    fetch("/me").then((r) => {
+    fetch("https://plantsy-production-7d90.up.railway.app/plants/me").then((r) => {
       if (r.ok) {
         r.json().then((user) => setUser(user));
         // navigate("/home")
@@ -26,7 +27,7 @@ function App() {
   return (
     <>
     <Router>
-    {/* <NavBar user={user} setUser={setUser}/> */}
+    <NavBar user={user} setUser={setUser}/>
     <BaseRouter user={user} setUser={setUser} autologin={autologin} />
     </Router>
     <Footer/>

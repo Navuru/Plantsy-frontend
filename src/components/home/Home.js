@@ -11,7 +11,7 @@ function Home (){
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-    fetch('/plants')
+    fetch('https://plantsy-production-7d90.up.railway.app/plants/plants')
     .then((r) => r.json())
     .then(data => setPlants(data))
   }, []);

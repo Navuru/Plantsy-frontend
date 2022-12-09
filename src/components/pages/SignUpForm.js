@@ -1,18 +1,21 @@
 import React, { useState } from "react";
 import "../pages/login.css"
 import Error from "./Error";
+import { useNavigate } from 'react-router-dom';
 
-function SignUpForm ({onLogin}) {
+function SignUpForm () {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
     const [errors, setErrors] = useState([]);
 
+    const navigate = useNavigate();
+
     function handleSubmit(e) {
         e.preventDefault();
         setErrors([]);
-        fetch("/signup", {
+        fetch("https://plantsy-production-7d90.up.railway.app/plants/signup", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -24,7 +27,9 @@ function SignUpForm ({onLogin}) {
             }),
         }).then((r) => {
             if (r.ok) {
-                r.json().then((user) => onLogin(user));
+                r.json().then(user => {
+                    navigate('/home')
+                });
             } else {
                 r.json().then((err) => setErrors(err));
             }
