@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Login from "./login/Login";
 import BaseRouter from "../routes";
 import {BrowserRouter as Router} from "react-router-dom";
 // import { useNavigate } from 'react-router-dom';
 import Footer from '../Footer';
-import NavBar from './NavBar';
 
 
 function App() {
