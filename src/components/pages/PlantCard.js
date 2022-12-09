@@ -1,5 +1,4 @@
 import React from 'react';
-import PlantForm from "./PlantForm";
 import "../home/Home.css"
 
 function PlantCard ({plant, onDeletePlant, onUpdatePlant}) {
@@ -32,17 +31,6 @@ function PlantCard ({plant, onDeletePlant, onUpdatePlant}) {
         .then((updatedPlant) => onUpdatePlant(updatedPlant));
     }
     return (
-        // <div id = "card"className="card" style={{width: "15rem"}}>
-        // <img src={image_url} class="card-img-top" alt="..." style={{width: "15rem"}}/>
-        // <div class="card-body">
-        //     <h3 class="card-title">{name}</h3>
-        //     <p class="card-text">{description}</p>
-        //     <p>{likes} Likes</p>
-        //     <button type="button" class="btn btn-success" onClick={handleLikeClick}>Like</button>
-        //     <button className="del-btn" onClick={handleDeleteClick}>Delete</button>
-        // </div>
-        // </div>
-
             <div className="card">
                 <img src={image_url} alt={name} style={{width: "17rem", height:""}} /> 
                 <div>

@@ -1,13 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Login from "./login/Login";
-import LoginForm from './pages/LoginForm';
-import Home from './home/Home';
 import BaseRouter from "../routes";
 import {BrowserRouter as Router} from "react-router-dom";
-import { Route} from "react-router-dom";
-import { Routes } from "react-router-dom";
 import Footer from '../Footer';
-// import PlantContainer from './pages/PlantContainer';
 import NavBar from './NavBar';
 
 

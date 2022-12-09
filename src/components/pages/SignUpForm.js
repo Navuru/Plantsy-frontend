@@ -1,6 +1,6 @@
-// import { Button } from "bootstrap";
 import React, { useState } from "react";
 import "../pages/login.css"
+import Error from "./Error";
 
 function SignUpForm ({onLogin}) {
 
@@ -69,11 +69,11 @@ function SignUpForm ({onLogin}) {
             value="Create Account"
             className="submit"
             />
-            {/* <div>
+            <div>
             {errors.map((err) => (
           <Error key={err}>{err}</Error>
         ))}
-            </div> */}
+            </div>
         </form>
     </div>
     )

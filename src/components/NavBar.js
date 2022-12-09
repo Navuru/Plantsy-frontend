@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 
 function NavBar ({user, setUser}) {
 
@@ -12,10 +11,11 @@ function NavBar ({user, setUser}) {
       }
 
       return (
+        <div id = "display">
         <div>
-        {/* <button as={Link} to="/home">
-          New Plant
-        </button> */}
+
+        </div>
+        
         <button onClick={handleLogoutClick}>
           Logout
         </button>

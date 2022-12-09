@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-// import SignUpForm from "./SignUpForm";
 import "../pages/login.css"
 import Error from "./Error";
 

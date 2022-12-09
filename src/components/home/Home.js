@@ -1,16 +1,14 @@
-// import PlantCard from "./PlantCard";
 import PlantForm from "../pages/PlantForm";
-import SignUpForm from "../pages/SignUpForm";
-import LoginForm from "../pages/LoginForm"
 import PlantContainer from "../pages/PlantContainer";
 import "../home/Home.css"
 import Header from "../pages/Header"
 import { useEffect, useState } from "react";
 
-function Home (){
+function Home ({name,description,likes}){
 
     const [plants,setPlants] = useState ([]);
   const [showForm, setShowForm] = useState(false);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     fetch('/plants')
@@ -18,8 +16,27 @@ function Home (){
     .then(data => setPlants(data))
   }, []);
 
+  const plant = plants.filter((item) => {
+    return search.toLowerCase() === ""
+      ? item : item.name.toLowerCase().includes(search.toLowerCase());
+  })
+  .map((plant) => {
+    return (
+      <div key={plant.name} className="card">
+        <h3>{name}</h3>
+        <p>{description}</p>
+        <p>{likes} Likes </p>
+
+      </div>
+    )
+  })
+
   function handleClick() {
     setShowForm((showForm) => !showForm);
+  }
+
+  function handleSearch(search) {
+    setSearch(search);
   }
 
 
@@ -44,14 +61,12 @@ function Home (){
 
   return (
    <>
-   <Header/>
+   <Header setSearch={setSearch}/>
   {showForm ? <PlantForm onAddPlant={handleAddPlant}/> : null }
   <div>
   <button onClick={handleClick}>Add a Plant</button>
   </div>
-  
-  {/* <LoginForm/> */}
-  {/* <SignUpForm/> */}
+
     <div id = "grid-container">
   <PlantContainer
     plants={plants}
