@@ -4,7 +4,7 @@ import "../home/Home.css"
 import Header from "../pages/Header"
 import { useEffect, useState } from "react";
 
-function Home ({name,description,likes}){
+function Home (){
 
     const [plants,setPlants] = useState ([]);
   const [showForm, setShowForm] = useState(false);
@@ -16,28 +16,12 @@ function Home ({name,description,likes}){
     .then(data => setPlants(data))
   }, []);
 
-  const plant = plants.filter((item) => {
-    return search.toLowerCase() === ""
-      ? item : item.name.toLowerCase().includes(search.toLowerCase());
-  })
-  .map((plant) => {
-    return (
-      <div key={plant.name} className="card">
-        <h3>{name}</h3>
-        <p>{description}</p>
-        <p>{likes} Likes </p>
-
-      </div>
-    )
-  })
+  
 
   function handleClick() {
     setShowForm((showForm) => !showForm);
   }
 
-  function handleSearch(search) {
-    setSearch(search);
-  }
 
 
   function handleAddPlant(newPlant) {
@@ -69,6 +53,7 @@ function Home ({name,description,likes}){
 
     <div id = "grid-container">
   <PlantContainer
+    search={search}
     plants={plants}
     onDeletePlant={handleDeletePlant}
     onUpdatePlant={handleUpdatePlant}

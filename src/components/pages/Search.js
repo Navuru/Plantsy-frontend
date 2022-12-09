@@ -1,21 +1,21 @@
-import React from "react";
+// import React from "react";
 
 
-function Search({ search, setSearch }) {
+// function Search({ search, setSearch }) {
     
-  return (
-    <div className="search">
-      <br />
-      <input
-        type="text"
-        placeholder="Search for a plant"
-        onChange={(e) => {
-          setSearch(e.target.value);
-        }}
-      />
-      <br />
-    </div>
-  );
-}
+//   return (
+//     <div className="search">
+//       <br />
+//       <input
+//         type="text"
+//         placeholder="Search for a plant"
+//         onChange={(e) => {
+//           setSearch(e.target.value);
+//         }}
+//       />
+//       <br />
+//     </div>
+//   );
+// }
 
-export default Search;
+// export default Search;

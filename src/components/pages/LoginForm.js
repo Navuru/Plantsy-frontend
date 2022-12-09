@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import "../pages/login.css"
 import Error from "./Error";
+import { useNavigate } from 'react-router-dom';
 
 
 function LoginForm({onLogin}) {
@@ -8,6 +9,10 @@ function LoginForm({onLogin}) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
+    // const navigate = useNavigate();
+    // const to_home = () => {
+    //     navigate("/home");
+    //   };
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -21,6 +26,7 @@ function LoginForm({onLogin}) {
         }).then((r) => {
             if (r.ok) {
                 r.json().then((user) => onLogin(user));
+                // to_home()
             } else {
                 r.json().then((err) => setErrors(err.errors));
             }
