@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 // import SignUpForm from "./SignUpForm";
 import "../pages/login.css"
+import Error from "./Error";
 
 
 function LoginForm({onLogin}) {
@@ -55,11 +56,11 @@ function LoginForm({onLogin}) {
             value="Login"
             className="submit"
             />
-            {/* <div>
+            <div>
             {errors.map((err) => (
           <Error key={err}>{err}</Error>
         ))}
-            </div> */}
+            </div>
 
         </form>
     </div>

@@ -44,7 +44,7 @@ function PlantCard ({plant, onDeletePlant, onUpdatePlant}) {
         // </div>
 
             <div className="card">
-                <img src={image_url} alt={name} className="toy-avatar"style={{width: "15rem"}} /> 
+                <img src={image_url} alt={name} style={{width: "17rem", height:""}} /> 
                 <div>
                     <h3>{name}</h3>
                     <p>{description}</p>
