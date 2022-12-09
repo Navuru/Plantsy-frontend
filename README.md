@@ -21,7 +21,7 @@ lisalyayuga@gmail.com
 
 
 ## Installation
-To setup the site,follow the  [link](https://github.com/). This sets up the frontend of the site.
+To setup the site,follow the  [link](https://deft-profiterole-f4701b.netlify.app). This sets up the frontend of the site.
 Optionally you can clone both this repository and the backend-end repository `Plantsy-backend` onto your local machine by:
 
 ```console
