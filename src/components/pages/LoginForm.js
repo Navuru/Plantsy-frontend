@@ -18,7 +18,7 @@ function LoginForm() {
     function handleSubmit(e) {
         e.preventDefault();
         setErrors([]);
-        fetch("https://plantsy-production-7d90.up.railway.app/plants/login",{
+        fetch("plantsy-production-7d90.up.railway.app/plants/plants",{
             method: "POST",
             headers: {
             "Content-Type": "application/json",
