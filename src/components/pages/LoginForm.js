@@ -25,7 +25,7 @@ function LoginForm() {
             },
             body: JSON.stringify({username,password}),
         }).then((r) => {
-            if (r.status == 201) {
+            if (r.status === 201) {
                 // console.log("We are logged in")
                 r.json().then(user => {
                     navigate('/home')
