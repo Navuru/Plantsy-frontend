@@ -15,7 +15,7 @@ function App() {
     autologin();
   }, []);
   const autologin = () => {
-    fetch("plantsy-production-7d90.up.railway.app/plants/me").then((r) => {
+    fetch("plantsy-production-7d90.up.railway.app/me").then((r) => {
       if (r.ok) {
         r.json().then((user) => setUser(user));
         // navigate("/home")
