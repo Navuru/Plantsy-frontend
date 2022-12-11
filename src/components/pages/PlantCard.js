@@ -20,7 +20,7 @@ function PlantCard ({plant, onDeletePlant, onUpdatePlant}) {
             likes: plant.likes + 1,
         };
 
-        fetch (`plantsy-production-7d90.up.railway.app/plants/plants/${id}`, {
+        fetch (`plantsy-production-7d90.up.railway.app/plants${id}`, {
             method: 'PATCH',
             headers: { 
                 "Content-Type": "application/json",
