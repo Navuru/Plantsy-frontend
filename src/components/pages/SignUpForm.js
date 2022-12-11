@@ -15,7 +15,7 @@ function SignUpForm () {
     function handleSubmit(e) {
         e.preventDefault();
         setErrors([]);
-        fetch("plantsy-production-7d90.up.railway.app/plants/signup", {
+        fetch("https://plantsy-production-7d90.up.railway.app/signup", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

@@ -22,7 +22,7 @@ function PlantForm ({onAddPlant}) {
             ...formData,
             likes: 0,
         };
-        fetch("plantsy-production-7d90.up.railway.app/plants",{
+        fetch("https://plantsy-production-7d90.up.railway.app/plants",{
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
